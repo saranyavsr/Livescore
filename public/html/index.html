@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Live Score</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+ 
+    <body>
+
+        <form>
+          <header>Live Score</header>
+          <label>Live Sporting Event : Baseball or Cricket match</label>
+          <button class = button1>Tune in</button>
+          <button class = button2>Tune out</button>
+        </form>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io.connect('http://localhost:8080');
+        </script>
+
+    </body>
+</html>
