@@ -3,6 +3,8 @@ var app = express();
 var http = require('http');
 var fs = require('fs');
 
+var port = process.env.PORT || 8080;
+
 app.use(express.static(__dirname + "/public"));
 
 app.get("/", function(httpRequest, httpResponse, next){
@@ -21,4 +23,6 @@ io.sockets.on('connection', function (socket) {
     console.log('A client is connected!');
 });
 
-server.listen(8080);
+server.listen(port, function() {
+    console.log('Our app is running on http://localhost:' + port);
+});
